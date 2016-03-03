@@ -17,5 +17,29 @@
   </dependencies>
   <build>
     <finalName>MavenTest</finalName>
+  <plugins >
+                <!-- jetty配置-->
+      <plugin>
+          <groupId>org.mortbay.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <version>8.1.9.v20130131</version>
+          <configuration>
+              <stopKey>STOP</stopKey>
+              <stopPort>9090</stopPort>
+              <scanIntervalSeconds>5</scanIntervalSeconds>
+          </configuration>
+      </plugin>
+
+
+
+
+
+
+
+
+
+
+  </plugins>
+
   </build>
 </project>
