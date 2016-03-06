@@ -4,6 +4,17 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+    <!-- 配置log4j-->
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>/WEB-INF/log4j.properties</param-value>
+    </context-param>
+    <listener>
+    <listener-class>
+        org.springframework.web.util.Log4jConfigListener
+    </listener-class>
+    </listener>
+    <!--配置servlet-->
     <servlet>
         <servlet-name>ServletHello</servlet-name>
         <servlet-class>controller.ServletHello</servlet-class>
