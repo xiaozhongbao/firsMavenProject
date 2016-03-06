@@ -4,7 +4,7 @@ package controller;
  * @author xiaozhongbao
  * @date 16-3-6
  */
-public class PersonInfo {
+public class PersonInfo implements ITell{
 
 
         private String userName;
@@ -55,5 +55,21 @@ public class PersonInfo {
                     '}';
         }
 
+        @Override
+         public void tellSecrite() {
+          System.out.println(toString());
     }
+}
 
+interface  ITell{
+         void tellSecrite();
+}
+class Server{
+
+    public void makeSafe(){
+        System.out.println("it is safe");
+    }
+    public void clean(){
+        System.out.println("clean the dev");
+    }
+}

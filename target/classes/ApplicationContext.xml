@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"
        default-autowire="byName">
 <!--配置employee-->
     <bean id="employee" class="controller.Employee">
@@ -16,4 +16,13 @@
         <property name="sex" value="male"/>
         <property name="userName" value="xiao"/>
     </bean>
+    <bean id="server" class="controller.Server"/>
+    <!--配置aop-->
+    <aop:config proxy-target-class="true" >
+        <aop:aspect ref="server">
+            <aop:pointcut id="tell" expression="execution(* controller.ITell.tellSecrite(..))"/>
+            <aop:before pointcut-ref="tell" method="makeSafe" />
+            <aop:after-returning pointcut-ref="tell" method="clean"/>
+        </aop:aspect>
+            </aop:config>
 </beans>

@@ -26,6 +26,9 @@ public class ServletHello extends javax.servlet.http.HttpServlet {
         ApplicationContext ctx= new ClassPathXmlApplicationContext("ApplicationContext.xml");
         Employee employee=(Employee) ctx.getBean("employee");
         System.out.println( employee.toString());
+        PersonInfo personInfo=(PersonInfo) ctx.getBean("personInfo");
+        personInfo.tellSecrite();
+        //**********************************
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
