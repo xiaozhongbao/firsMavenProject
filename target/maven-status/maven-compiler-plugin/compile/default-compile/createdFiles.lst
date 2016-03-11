@@ -1,6 +1,6 @@
 controller/ITell.class
 controller/PersonInfo.class
 controller/ServletHello.class
-Hello.class
+controller/Hello.class
 controller/Employee.class
 controller/Server.class

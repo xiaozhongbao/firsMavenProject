@@ -25,4 +25,6 @@
             <aop:after-returning pointcut-ref="tell" method="clean"/>
         </aop:aspect>
             </aop:config>
+    <!-- 配置log4j-->
+
 </beans>
