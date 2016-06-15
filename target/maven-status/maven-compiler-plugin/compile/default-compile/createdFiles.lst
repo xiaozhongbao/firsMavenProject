@@ -1,0 +1,7 @@
+com\xzhb\trainTicket\IUser.class
+com\xzhb\trainTicket\Controller\ServletWelcome.class
+com\xzhb\trainTicket\Controller\ActionLogin.class
+com\xzhb\trainTicket\IStudentDao.class
+com\xzhb\trainTicket\StudentDaoImpl.class
+com\xzhb\trainTicket\UserInfo.class
+com\xzhb\trainTicket\Student.class
