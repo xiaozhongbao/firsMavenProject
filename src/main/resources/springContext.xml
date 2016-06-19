@@ -5,12 +5,21 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 <context:component-scan base-package="com.xzhb.trainTicket"/>
+    <context:property-placeholder location="enviroment/dataSource.properties" />
 
     <bean id="druidDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/xzhb_database"/>
-        <property name="username" value="xzhb"/>
-        <property name="password" value="123456"/>
+        <property name="driverClassName">
+                 <value>${jdbc.driver}</value>
+        </property>
+        <property name="url">
+        <value>${jdbc.url}</value>
+        </property>
+        <property name="username">
+            <value>${jdbc.username}</value>
+                </property>
+        <property name="password">
+            <value>${jdbc.password}</value>
+                </property>
         <property name="maxActive" value="20"/>
         <property name="initialSize" value="0"/>
         <property name="maxWait" value="60000"/>

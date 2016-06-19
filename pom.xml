@@ -36,10 +36,7 @@
           <artifactId>maven-jetty-plugin</artifactId>
           <version>6.1.24</version>
        <configuration>
-          <httpConnector>
-            <port>8088</port>
-            <idleTimeout>10</idleTimeout>
-          </httpConnector>
+
           <stopPort>8088</stopPort>
           <stopKey>stop</stopKey>
           <scanIntervalSeconds>10</scanIntervalSeconds>

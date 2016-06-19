@@ -21,11 +21,15 @@
   -
   - $Id$
   -->
-<web-app version="2.4"
-         xmlns="http://java.sun.com/xml/ns/j2ee"
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-  <servlet>
+
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+
+         version="2.5">
+
+   <servlet>
     <servlet-name>ServletWelcome</servlet-name>
     <servlet-class>com.xzhb.trainTicket.Controller.ServletWelcome</servlet-class>
   </servlet>
@@ -68,6 +72,7 @@
     <filter-name>struts2</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+
   <!--
   <filter-mapping>
     <filter-name>CocoonMultipartFilter</filter-name>
@@ -92,6 +97,8 @@
     - Declare Spring context listener which sets up the Spring Application Context
     - containing all Cocoon components (and user defined beans as well).
     -->
+
+
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
@@ -133,9 +140,9 @@
     <servlet-name>DispatcherServlet</servlet-name>
     <url-pattern>/*</url-pattern>
   </servlet-mapping-->
-
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+
 </web-app>
         

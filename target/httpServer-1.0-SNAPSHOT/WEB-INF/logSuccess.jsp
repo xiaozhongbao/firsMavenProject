@@ -11,6 +11,6 @@
     <title>SUCCESS</title>
 </head>
 <body>
-<h2>WELLCOME HEER</h2>
+<h2>WELCOME HERE</h2>
 </body>
 </html>

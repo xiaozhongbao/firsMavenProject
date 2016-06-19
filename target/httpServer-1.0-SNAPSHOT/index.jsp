@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: xiao
@@ -12,11 +13,12 @@
 </head>
 <body>
 <h2>Hello xiaozhongbao!</h2>
-    <form action="login" method="post">
-        username:<input type="text"/><br>
-        password:<input type="text"/><br>
+    <form action="register" method="post">
+        username:<input type="text" name="username"/><br/>
+        password:<input type="text" name="password"/><br/>
         <input type="submit" value="log in"/>
 
     </form>
+
 </body>
 </html>

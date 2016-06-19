@@ -6,9 +6,16 @@
 
 <struts>
     <package name="strutsOne" extends="struts-default">
-        <action name="login" class="com.xzhb.trainTicket.Controller.ActionLogin">
-            <result name="success">/WEB-INF/logSuccess.jsp</result>
+        <default-action-ref name="index"></default-action-ref>
+        <action name="index">
+            <result type="dispatcher">index.jsp</result>
         </action>
+        <action name="register" class="com.xzhb.trainTicket.Controller.ActionLogin">
+            <result name="success">/WEB-INF/logSuccess.jsp</result>
+            <result name="input">/WEB-INF/login.jsp</result>
+        </action>
+
+
     </package>
     
 </struts>
