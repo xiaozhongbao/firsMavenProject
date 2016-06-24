@@ -2,24 +2,29 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-<context:component-scan base-package="com.xzhb.trainTicket"/>
+    <context:component-scan base-package="com.xzhb.trainTicket"/>
+        <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+    <!--根据环境自动配置比如：开发，测试，发布等的配置文件。autoconfig-->
     <context:property-placeholder location="enviroment/dataSource.properties" />
+
 
     <bean id="druidDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <property name="driverClassName">
-                 <value>${jdbc.driver}</value>
+             <value>${jdbc.driver}</value>
         </property>
         <property name="url">
-        <value>${jdbc.url}</value>
+             <value>${jdbc.url}</value>
         </property>
         <property name="username">
             <value>${jdbc.username}</value>
-                </property>
+        </property>
         <property name="password">
             <value>${jdbc.password}</value>
-                </property>
+        </property>
         <property name="maxActive" value="20"/>
         <property name="initialSize" value="0"/>
         <property name="maxWait" value="60000"/>

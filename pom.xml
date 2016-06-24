@@ -85,7 +85,31 @@
       <artifactId>spring-jdbc</artifactId>
       <version>${springVersion}</version>
     </dependency>
-      <!-- http://mvnrepository.com/artifact/junit/junit -->
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${springVersion}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+      <version>${springVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>1.7.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>2.2.2</version>
+    </dependency>
+
+    <!-- http://mvnrepository.com/artifact/junit/junit -->
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
@@ -147,7 +171,21 @@
       <version>2.3.20</version>
     </dependency>
 
-
   </dependencies>
+
+  <profiles>
+<profile>
+<id>test</id>
+<activation>
+  <activeByDefault>true</activeByDefault>
+</activation>
+    <properties >
+<db.driver>com.mysql.jdbc.Driver</db.driver>
+    <db.url>jdbc:mysql://localhost:3306/xzhb_database?useSSL=true</db.url>
+    <db.username>xzhb</db.username>
+    <db.password>123456</db.password>
+  </properties>
+</profile>
+  </profiles>
 
 </project>
