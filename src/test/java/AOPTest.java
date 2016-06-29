@@ -1,8 +1,13 @@
 import com.xzhb.trainTicket.AOP.ArithmeticCaculatorImpl;
 import com.xzhb.trainTicket.AOP.IArithmetiaCaculator;
 import org.junit.Test;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.context.support.XmlWebApplicationContext;
 
 /**
  * Created by xiao on 2016/6/22.
@@ -14,6 +19,7 @@ public class AOPTest {
     IArithmetiaCaculator   ar = (IArithmetiaCaculator) ctx.getBean("arithmeticCaculatorImpl");
       int res=  ar.add(5,4);
         System.out.println("result is:" +res);
+
     }
 
 }
